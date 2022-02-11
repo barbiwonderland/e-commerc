@@ -14,14 +14,22 @@ function Cart() {
   return (
     <>
       <div className="container">
-        <div className="main-cart">
-          {carrito.map((item) => (
-            <ItemCarrito {...item} key={item.id} />
-          ))}
-        </div>
-        <div className="total text-center fw-bold mt-3">
-          <u>TOTAL: $ {totalCarrito}</u>
-        </div>
+        {(!carrito.length )? (
+          <div className="row d-flex justify-content-center mx-auto mt-3">
+            <h5 className="text-center">Aún no agrego ningun producto :[ </h5>
+          </div>
+        ) : (
+          <>
+            <div className="main-cart">
+              {carrito.map((item) => (
+                <ItemCarrito {...item} key={item.id} />
+              ))}
+            </div>
+            <div className="total text-center fw-bold mt-3">
+              <u>TOTAL: $ {totalCarrito}</u>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
