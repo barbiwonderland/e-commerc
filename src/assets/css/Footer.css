@@ -1,0 +1,17 @@
+.footer-container {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.footer-item {
+  margin-right: 20px;
+  font-size: 28px;
+}
+.footer-item:hover {
+  padding: 5px;
+  transform: scale(1.5);
+}

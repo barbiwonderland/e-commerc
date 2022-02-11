@@ -1,0 +1,26 @@
+.card-img > img {
+  width: 120px;
+  height: 100px;
+  object-fit: contain;
+  margin: auto;
+}
+
+.card-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  height: 250px;
+  width: 190px;
+  border: 1px solid grey;
+  border-radius: 5%;
+  margin: 1%;
+}
+.card-price{
+    font-size:larger;
+    bottom:0;
+}
+button:focus {
+  outline: 0 !important;
+  border:none
+}
