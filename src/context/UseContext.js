@@ -1,9 +1,10 @@
 import axios from "axios";
-import React, { useReducer,useState } from "react";
+import React, { useReducer, useState } from "react";
+import { toast } from "react-toastify";
 import Contexto from "./Contexto";
 import Reducer from "./Reducer";
 function UseContext(props) {
-  const [loading, setLoading] =useState(false) ;
+  const [loading, setLoading] = useState(false);
   const { children } = props;
   const initialState = {
     productos: [],
@@ -18,6 +19,15 @@ function UseContext(props) {
   };
   const addToCart = (x) => {
     dispatch({ type: "ADD_CART", payload: x });
+    toast.success("Producto agregado al carrito", {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   const incrementCart = (x) => {

@@ -3,7 +3,7 @@ import Contexto from "../context/Contexto";
 import ItemCarrito from "../components/ItemCarrito";
 import "../assets/css/Cart.css";
 function Cart() {
-  const { carrito, deleteCart } = useContext(Contexto);
+  const { carrito } = useContext(Contexto);
   const totalCarrito = carrito
     .reduce(
       (total, currentvalue) =>
