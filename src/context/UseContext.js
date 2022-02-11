@@ -1,9 +1,9 @@
 import axios from "axios";
-import React, { useReducer } from "react";
+import React, { useReducer,useState } from "react";
 import Contexto from "./Contexto";
 import Reducer from "./Reducer";
 function UseContext(props) {
-  // const [loading, setLoading] = false;
+  const [loading, setLoading] =useState(false) ;
   const { children } = props;
   const initialState = {
     productos: [],
@@ -13,7 +13,7 @@ function UseContext(props) {
 
   const getProducts = async () => {
     const res = await axios.get("https://fakestoreapi.com/products?limit=30");
-    // setLoading(true);
+    setLoading(true);
     dispatch({ type: "GET_PRODUCTS", payload: res.data });
   };
   const addToCart = (x) => {
@@ -34,6 +34,7 @@ function UseContext(props) {
         addToCart,
         incrementCart,
         reduceCart,
+        loading,
         productos: state.productos,
         carrito: state.carrito,
       }}
